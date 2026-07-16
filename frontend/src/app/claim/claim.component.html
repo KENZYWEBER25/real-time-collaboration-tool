@@ -1,0 +1,16 @@
+<div>
+  <h2>Real-time Claims Dashboard</h2>
+  
+  <form (ngSubmit)="createClaim()">
+    <input [(ngModel)]="newClaim.title" placeholder="Claim Title" />
+    <textarea [(ngModel)]="newClaim.description" placeholder="Description"></textarea>
+    <button type="submit">Submit Claim</button>
+  </form>
+
+  <h3>Live Claims</h3>
+  <ul>
+    <li *ngFor="let claim of claims">
+      {{ claim.title }} - Status: {{ claim.status }}
+    </li>
+  </ul>
+</div>
